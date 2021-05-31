@@ -1,0 +1,31 @@
+{
+  "name": "glim-chat-socket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XolyExperience/glim-chat-socket.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/XolyExperience/glim-chat-socket/issues"
+  },
+  "homepage": "https://github.com/XolyExperience/glim-chat-socket#readme",
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.7"
+  },
+  "engines": {
+    "node": "14.x"
+  },
+  "dependencies": {
+    "socket.io": "^4.1.2"
+  }
+}
