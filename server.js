@@ -1,7 +1,8 @@
 // require("dotenv").config();
-const io = require("socket.io")(process.env.PORT, {
+const PORT = process.env.PORT || 4000;
+const io = require("socket.io")(PORT, {
   cors: {
-    origin: ["http://localhost:3000"],
+    origin: ["https://glim-chat-app.herokuapp.com/"],
   },
 });
 
