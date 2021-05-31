@@ -1,10 +1,14 @@
-// require("dotenv").config();
+const express = require("express");
+const socketIO = require("socket.io");
+
 const PORT = process.env.PORT || 4000;
-const io = require("socket.io")(PORT, {
-  cors: {
-    origin: ["https://glim-chat-app.herokuapp.com/"],
-  },
-});
+const INDEX = "/index.html";
+
+const server = express()
+  .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
+  .listen(PORT, () => console.log(`Listening on ${PORT}`));
+
+const io = socketIO(server);
 
 const users = {};
 
@@ -24,3 +28,5 @@ io.on("connection", (socket) => {
     });
   });
 });
+
+setInterval(() => io.emit("time", new Date().toTimeString()), 1000);
